@@ -1256,7 +1256,10 @@ body.homepage {
 
 @media (max-width: 991px) {
   .section-works .main-btn {
-    float: none; } }
+    float: none; }
+  .section-works .main-btn-pos{
+    text-align: left;
+    } }
 
 @media (min-width: 991px) {
   .work-grid-item {
