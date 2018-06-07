@@ -1,0 +1,3500 @@
+// 山川久也2018官網
+// Version
+// Copyright
+// Author
+// Last Modifed Date
+
+// ----------------------------
+// $Catalog 目錄
+
+// --共用樣式--
+// $body
+// $文字樣式
+// $顏色樣式
+// $按鈕樣式
+// $bootstrap 調整
+// $bootstrap add clear
+// $waypoint & animation 設定
+
+// --首頁 --
+// $首頁共用樣式
+// $sideNav
+// $section-top
+// $section-services共用
+// $section-services-fixed-content
+// $section-services-web
+// $section-services-app
+// $section-works
+
+// --內頁 --
+// $內頁共用
+// $nsdi-works
+// $nsdi-works-page
+// $nsdi-about
+// $nsdi-contact
+// $nsdi-team
+// $nsdi-webdesign-共用
+// $nsdi-webdesign-feature
+// $nsdi-webdesign-function
+// $nsdi-webdesign-spec
+
+// -- 其他 --
+// $retina background img setting
+// $scroll reveal animate css
+
+// ----------------------------
+
+
+@charset "UTF-8"
+@import var_mixin
+
+
+body,html
+    @import url('//fonts.googleapis.com/earlyaccess/notosanstc.css')
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700')
+    margin: 0
+    padding: 0
+    word-break: normal
+    -webkit-font-smoothing: antialiased
+    height: auto
+    text-align: left
+    overflow-x: hidden
+    letter-spacing: .5px
+    font-family:  'Open Sans',  'Noto Sans TC', "PingFang TC" , "微軟正黑體", "蘋果儷中黑", Arial
+    font-weight: 500
+    color: $color_home-white
+    background-color: $color_main-bg
+
+@media all and (max-width: 991px)
+    body
+       overflow-x: hidden!important 
+
+// ----------------------------
+// $body
+// ----------------------------
+
+    
+body
+    position: relative
+    height: 100%
+    
+// 測試用
+.u-test
+    border: .5px solid red
+
+.u-test *
+    border: .5px solid red
+
+.u-dn
+    display: none
+
+
+// ----------------------------
+// $文字樣式
+// ----------------------------
+
+h1, h2, h3, h4, h5, h6, p, a, span, li
+    @import url('//fonts.googleapis.com/earlyaccess/notosanstc.css')
+    @import url("https://fonts.googleapis.com/css?family=Lato:900")
+    letter-spacing: .5px
+    // font-family: 'Open Sans',  'Noto Sans TC', "PingFang TC", "微軟正黑體", "蘋果儷中黑", Arial
+    font-weight: 500
+    -webkit-font-smoothing: antialiased
+.no__wrap
+    white-space: nowrap!important
+    display: inline-block
+a
+    color: $color_home-white
+    &:hover
+        color: $color_home-white
+h1
+    font-size: 56px
+h2
+    font-size: 48px
+h3
+    font-size: 24px
+h4
+    font-size: 18px
+h5
+    font-size: 12px
+p, span, a , li
+    font-size: 16px
+p
+    line-height: 1.7
+
+@media (max-width: 768px)
+    h1
+        font-size: 40px
+    h2
+        font-size: 36px
+    h3
+        font-size: 24px
+    h4
+        font-size: 16px
+    h5
+        font-size: 12px
+    p, span, a , li
+        font-size: 14px
+
+body
+    .nsdi-theme.index-css
+        font-family:  'Noto Sans TC', 'Open Sans', "PingFang TC" , "微軟正黑體", "蘋果儷中黑", Arial
+// ----------------------------
+// $顏色樣式
+// ----------------------------
+
+
+
+// ----------------------------
+// $按鈕樣式
+// ----------------------------
+// 可設定mixin
+// .main-btn
+//     +main-btn
+
+// @media (min-width: 991px)
+//     .main-btn
+//         &:hover
+//             +main-btn-hover
+
+.main-btn-wrap
+    display: inline-block
+    button.main-btn
+        +main-btn
+
+    @media (min-width: 991px)
+        .main-btn
+            &:hover
+                +main-btn-hover
+
+.sub-btn-wrap
+    +sub-btn
+    @media (min-width: 991px)
+        +sub-btn-hover
+// ----------------------------
+// $bootstrap 調整
+// ----------------------------
+
+// .bs-row-parent
+//     display: flex
+//     align-items: center 
+//     display: table
+//     table-layout: fixed
+//     width: 100%
+// .bs-col-child
+//     display: table-cell
+//     vertical-align: middle
+
+
+.po-r
+    position: relative
+  
+@media (min-width: 1600px) 
+    .index-css .container
+        width: 1480px
+        padding-left: 0px
+        padding-right: 0px
+  
+@media (min-width: 1600px) and (max-height: 800px) 
+    .index-css .container
+        width: 1170px
+
+
+@media (max-height: 800px)
+    .hidden-smheight
+        display: none!important
+    .visible-smheight
+        display: block!important
+
+
+
+
+// ----------------------------
+// $waypoint & animation 設定
+// ----------------------------
+.myAnimation
+    opacity: 0
+.myAnimation.animated
+    opacity: 1
+
+
+// ----------------------------
+// $首頁共用樣式
+// ----------------------------
+body.homepage
+    background-color: $color_home-bg
+.homepage
+
+    .section-block
+        min-height: 100vh
+        z-index: 1
+
+    h2.main-title
+        text-align: left
+        font-size: 34px
+        font-weight: bold
+        letter-spacing: 3.4px
+        color: rgba($color_home-white, 0.7)
+        position: relative
+        padding-bottom: 45px
+
+        span
+            display: block
+            font-size: 18px
+            font-weight: bold
+            letter-spacing: 1.8px
+            color: $color_home-main
+            padding-bottom: 15px
+
+        &:after
+            content: ''
+            position: absolute
+            +size(37px, 9px)
+            background-color: $color_home-main
+            left: 0
+            bottom: 0
+    .main-paragraph
+        margin: 40px 0px
+        p
+            font-size: 14px
+            line-height: 2
+            letter-spacing: 1.8px
+            color: rgba($color_home-white, 0.7)
+            margin-bottom: 15px
+    .main-btn-wrap
+        .main-btn
+            +main-btn($color: $color_home-main, $pTB: 7px , $pRL: 27px, $fz: 18px, $borderW: 1px)
+
+        @media (min-width: 991px)
+            .main-btn
+                &:hover
+                    +main-btn-hover            
+
+@media (max-width: 991px)
+    .homepage
+        .section-services-web, .section-services-app, .section-works
+            margin-top: 95px
+            margin-bottom: 55px
+
+@media (max-width: 991px)
+    .homepage
+        h2.main-title
+            font-size: 30px
+            letter-spacing: 3px
+            span
+                font-size: 14px
+                letter-spacing: 1.4px
+@media (max-width: 768px)
+    .homepage
+        .section-works
+            padding-left: 60px
+            padding-right: 60px
+// ----------------------------
+// $sideNav
+// ----------------------------
+
+
+.side-nav
+    z-index: 100
+    position: fixed
+    left: 45px
+    top: 50%
+    transform: translateY(-50%)
+    color: rgba($color_home-white, .4)
+    
+    .side-nav-item
+        position: relative
+        padding: 7.5px 15px 7.5px 22px
+        transition: all .8s ease-out
+        user-select: none
+
+        &:before
+            content: ''
+            position: absolute
+            +size(7px, 7px)
+            border-radius: 50%
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            border: 1px solid rgba($color_home-white, .4)
+            +d_transition
+
+
+        .side-nav-link
+            vertical-align: middle
+            padding: 7.5px 5px 7.5px 0px
+            color: rgba($color_home-white, .4)
+            font-size: 14px
+            letter-spacing: 1.8px
+            +d_transition(.3s)
+
+        .side-nav-bullet
+            vertical-align: middle
+            display: inline-block
+            position: relative
+            width: 20px
+            margin-right: 2px
+            overflow: hidden
+            padding: 7.5px 0px 7.5px 0px
+            &:after, &:before
+                content: ''
+                +size(100%, 1px)
+                position: absolute
+
+            &:before
+                background-color: rgba($color_home-white, .4)
+            &:after
+                background-color: $color_home-white
+                transform: translateX(-100%)
+                transition: 1s
+                transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+            &.active
+                &:after
+                    transform: translateX(0%)
+
+        &.active
+            .side-nav-link
+                color: $color_home-white
+            &:before
+                border: 1px solid rgba($color_home-white, 1)
+                background-color: $color_home-white
+
+
+        &:hover
+            letter-spacing: 3px
+            margin-left: 12px
+
+            .side-nav-link
+                letter-spacing: 3.5px
+                margin-left: 5px
+
+
+            .side-nav-bullet
+                width: 25px
+                margin-right: 3px
+
+    
+
+
+
+
+// ----------------------------
+// $section-top
+// ----------------------------
+.section-top
+    overflow: hidden
+
+
+// -- background 
+.section-top-bg-container
+    background-image: url(../images/homepage_top/img_home-top_14.png)
+    +bgiCover
+    position: relative
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    overflow: hidden
+    perspective: 1000px
+
+    .zindex1
+        z-index: 1
+    .zindex2
+        z-index: 2
+    .zindex3
+        z-index: 3
+    .zindex4
+        z-index: 4
+    .zindex5
+        z-index: 5
+    .zindex6
+        z-index: 6
+    .zindex7
+        z-index: 7
+    .zindex8
+        z-index: 8
+    .zindex9
+        z-index: 9
+    .zindex10
+        z-index: 10
+    .zindex11
+        z-index: 11
+    .zindex12
+        z-index: 12
+    .zindex13
+        z-index: 13
+    .zindex14
+        z-index: 14
+    
+
+
+// --- 山 ---
+.t-mt-wrap
+    position: absolute
+    +bgiCover
+    +size(100%, 100%)
+    background-repeat: no-repeat
+    transform-style: preserve-3d
+.t-mt-wrap.no6
+    background-image: url(../images/homepage_top/img_home-top_13.png)
+.t-mt-wrap.no5
+    background-image: url(../images/homepage_top/img_home-top_12.png)
+.t-mt-wrap.no4
+    background-image: url(../images/homepage_top/img_home-top_10.png)
+.t-mt-wrap.no3
+    background-image: url(../images/homepage_top/img_home-top_07.png)
+.t-mt-wrap.no2
+    background-image: url(../images/homepage_top/img_home-top_02.png)
+.t-mt-wrap.no1
+    background-image: url(../images/homepage_top/img_home-top_01.png)
+    &:after
+        content: ''
+        position: absolute
+        +size(100%, 300px)
+        background-color: $color_home-bg
+        left: 0
+        bottom: -300px
+
+// --- 霧 ---
+.t-img-fog-wrap
+    position: absolute
+    +bgiCover
+    +size(100%, 100%)
+    background-repeat: repeat-x
+    transform-style: preserve-3d
+
+.t-img-fog-wrap.no1
+    background-image: url(../images/homepage_top/img_home-top_03.png)
+.t-img-fog-wrap.no2
+    background-image: url(../images/homepage_top/img_home-top_09.png)
+.t-img-fog-wrap.no3
+    background-image: url(../images/homepage_top/img_home-top_11.png)
+
+
+// --- 山川久也 ---
+.t-logo-wraps
+    position: relative
+    top: 50%
+    
+.t-logo-wrap
+    position: absolute
+    top: calc( 50% - 66px)
+    transform-style: preserve-3d
+.t-logo-wrap.no1
+    left: calc( 50% - 132px - 120px - 25px)
+.t-logo-wrap.no2
+    left: calc( 50% - 132px - 5px)
+.t-logo-wrap.no3
+    left: calc( 50% + 5px )
+.t-logo-wrap.no4
+    left: calc( 50% + 120px + 25px)
+
+
+
+@media (min-width: 991px)
+    .t-img-fog-wrap.no1
+        animation: fogFloat2 35s infinite alternate-reverse
+    .t-img-fog-wrap.no2
+        animation: fogFloat 35s infinite alternate-reverse
+    .t-img-fog-wrap.no3
+        animation: fogFloat2 35s infinite alternate-reverse
+
+
+// -- scroll hint icon
+.nsdi-theme
+    .scroll-hint-wrap
+        transform: translate(-50%, 0)
+        animation: elFloat1 1.2s infinite alternate-reverse
+        position: relative
+        left: 50%
+        cursor: pointer
+        z-index: 50
+        .scroll-hint-btn
+            position: absolute
+            left: 50%
+            bottom: 80px
+            transform-origin: left center
+            transform: rotate(-90deg)
+            user-select: none
+            padding: 10px 0px 10px 0px
+            +d_transition
+
+            &:before
+                content: ''
+                position: absolute
+                top: 50%
+                right: -25%
+                width: 0
+                height: 1px
+                background: $color_home-main
+                transition: all 0.4s
+                transform: translateY(100%)
+                transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+            a
+                display: block
+                +size(100%, 100%)
+            .letter-group
+                padding-left: 0px
+                animation: elFloat2 1.2s .2s infinite alternate-reverse
+
+            .letter-group span
+                font-size: 10.6px
+                font-weight: 600
+                letter-spacing: -2px
+                vertical-align: middle
+                text-align: left
+                +d_transition
+                transition-delay: .2s
+                display: inline-block
+
+            .ic-hint-tri
+                margin-right: 5px
+                vertical-align: middle
+                +size(10px, 10px)
+                stroke: $color_home-main
+                stroke-width: 1.5px
+                fill: none
+                stroke-linejoin: round
+                +d_transition(.5s)
+
+        @media (min-width: 991px)
+            &:hover
+                animation-play-state: paused
+                .scroll-hint-btn
+                    &:before
+                        width: 80%
+                        right: 0%
+                .letter-group
+                    animation-play-state: paused
+                .letter-group span
+                    animation-play-state: paused
+                    letter-spacing: 0px
+                    opacity: 0.5
+                    &:nth-child(1)
+                        transform: translate(0, -20px) rotate(-45deg) scale(1.2)
+                    &:nth-child(2)
+                        transform: translate(0, 35px) rotate(-65deg) scale(1.2)
+                    &:nth-child(3)
+                        transform: translate(5px, -15px) rotate(-30deg) scale(1.2)
+                    &:nth-child(4)
+                        transform: translate(10px, 10px) rotate(60deg) scale(1.2)
+                    &:nth-child(5)
+                        transform: translate(5px, -35px) rotate(-45deg) scale(1.2)
+                    &:nth-child(6)
+                        transform: translate(15px, 15px) rotate(30deg) scale(1.2)
+                .ic-hint-tri
+                    margin-right: 10px
+
+
+.section-top-bg-container-mobile
+    background-image: url(../images/homepage_top/mobile/img_home-top.jpg)
+    +bgiCover
+    position: relative
+    width: 100%
+    height: 100%
+    min-height: 100vh
+    overflow: hidden
+
+// ----------------------------
+// $section-services共用
+// ----------------------------
+
+.section-services
+    .container
+        position: relative
+
+    .intro-container
+        position: relative
+        z-index: 10
+    .bg-rectangle
+        background-color: $color_home-light
+        width: 75vw
+        padding-top: calc( 85vw * 1 / 3)
+        position: absolute
+        z-index: 0
+        left: 15%
+        top: 50%
+        transform: translate(0, -50%)
+    .img-container
+        img
+            +size(100%, auto)
+            position: absolute
+            left: 0
+            top: 0
+
+    @media (min-width: 991px)
+        .bs-row-parent
+            display: flex
+            align-items: center
+
+    @media (max-width: 991px)
+        .intro-container
+            padding-left: 60px
+            padding-right: 60px
+        .bg-rectangle
+            padding-top: 450px
+            width: 100vw
+            position: absolute
+            z-index: 0
+            left: initial
+            right: 10%
+            top: -15px
+            opacity: 1
+            transform: translate(0, 0)
+
+    @media (max-width: 768px)
+        .bg-rectangle
+            padding-top: 380px
+    @media (max-width: 480px)
+        .bg-rectangle
+            padding-top: 300px
+// ----------------------------
+// $section-services-fixed-content
+// ----------------------------
+
+// 色塊、文字
+
+.fixed-content.section-block
+    position: fixed
+    top: 50%
+    width: 100%
+    min-height: 0px
+    transform: translate(0, -50%)
+    z-index: 0
+
+
+.bg-rectangle-fixed
+    background-color: $color_home-light
+    width: 100%
+    padding-top: calc(100% * 628 / 1357)
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%) scaleY(0)
+    +d_transition
+    transform-origin: bottom
+
+
+.bg-rectangle-fixed:nth-child(1)
+    top: 200vh
+    transform: translate(0, -50%) scaleY(2)
+    transform-origin: top
+    transition: top 1s cubic-bezier(.23,1,.32,1) , transform 1s .4s cubic-bezier(.23,1,.32,1)
+
+
+@media (max-width: 1199px)
+    .bg-rectangle-fixed
+        top: 1200%
+        right: 5%
+// ----------------------------
+// $section-services-web
+// ----------------------------
+
+// 左邊圖
+.section-services-web
+    .img-container
+        width: 100%
+        padding-top: calc(100% * 770 / 879)        
+    .web-img
+        position: absolute
+        left: 0
+        top: 0
+        +size(100%, 100%)
+        transition: .6s cubic-bezier(0.19, 1, 0.22, 1)
+        transform: translateX(-150%) translateY(150%)
+        &:nth-child(1), &:nth-child(2) ,&:nth-child(3)
+            transition-delay: .3s
+        &:nth-child(4)
+        &:nth-child(5)
+            transition-delay: .1s
+        &:nth-child(6), &:nth-child(7), &:nth-child(8)
+            transition-delay: .2s
+
+        
+        
+
+// ----------------------------
+// $section-services-app
+// ----------------------------
+
+// 左邊圖
+.section-services-app
+    .img-container
+        width: 100%
+        padding-top: calc(100% * 762 / 942) 
+
+    .app-img
+        position: absolute
+        left: 0
+        top: 0
+        +size(100%, 100%)
+        transform: translate(-150%, 150%)
+        transition: .6s cubic-bezier(0.19, 1, 0.22, 1)
+        &:nth-child(2), &:nth-child(3)
+            transition-delay: .1s
+
+        &:nth-child(3)
+            opacity: 0
+            animation: fadeInOut 10s ease-in-out 1s infinite
+    .app-img-ani
+        
+// ----------------------------
+// $section-works
+// ----------------------------
+.section-works
+    .row
+        margin-right: -7.5px
+        margin-left: -7.5px
+    .col-md-3
+        padding-right: 7.5px
+        padding-left: 7.5px
+    .main-btn-pos
+        text-align: right
+
+    .work-grid-wrap
+        padding: 40px 0px 25px 0px
+
+.work-grid-item
+    margin-bottom: 30px
+    position: relative
+    overflow: hidden
+
+    .img-box
+        width: 100%
+        padding-top: calc(100% * 3 / 4)
+        position: relative
+        +d_transition
+        img
+            position: absolute
+            +poaCenter
+            +size(100%, auto)
+            +d_transition
+            max-width: 100%
+            max-height: 100%
+            
+
+
+    .work-link
+        +poaLink
+
+    .work-title
+        padding: 10px 0px
+        +d_transition
+
+        p
+            text-align: left
+            color: $color_home-white
+            font-size: 16px
+            font-weight: normal
+            letter-spacing: 2.5px
+
+        
+@media (max-width: 991px)
+    .section-works
+        .main-btn
+            float: none
+
+
+@media (min-width: 991px)
+
+    .work-grid-item
+        margin-bottom: 15px
+        .work-title
+            position: absolute
+            opacity: 0
+            +size(100%, 100%)
+            background-color: rgba(0,0,0,0.7)
+            border: 8px solid $color_home-main
+            p
+                +poaCenter
+                width: 100%
+                text-align: center
+                padding: 10px
+                font-size: 22px
+                letter-spacing: 3.6px
+                color: $color_home-main
+        &:hover
+            .work-title
+                opacity: 1
+                +d_transition
+                border: 8px solid $color_home-main
+            .img-box
+                img
+                    transform: translate(-50%, -50%) scale(1.2)
+
+
+// ----------------------------
+// $內頁共用
+// ----------------------------
+
+.nsdi-theme
+    .reveal
+        background-color: $color_home-main
+    .to-top-btn
+        +size(40px, 40px)
+        border-radius: 50%
+        border: 1px solid $color_home-main
+        position: fixed
+        left: 50%
+        transform: translate(-50%, 0%)
+        bottom: 30px
+        cursor: pointer
+        transition: all .3s ease-in
+        z-index: 999
+        .to-top-icon
+            +size(1px, 20px)
+            +poaCenter
+            background-color: $color_home-main
+            transition: all .3s ease-in
+            &:before, &:after
+                content: ''
+                position: absolute
+                height: 12px
+                width: 1px
+                background-color: $color_home-main
+                top: 0
+                transform-origin: top center
+                transition: all .3s ease-in
+            &:before
+                transform: rotate(45deg)
+            &:after
+                transform: rotate(-45deg)
+
+@media all and (min-width: 991px)
+    .nsdi-theme
+        .to-top-btn
+            right: 105px
+            left: initial
+            transform: translate(0%, 0%)
+            &:hover
+                bottom: 35px
+                background-color: $color_home-main
+                // background-color:  rgba($color_home-main, 0.1)
+                .to-top-icon
+                    background-color: $color_main-bg
+                    &:before, &:after
+                        background-color: $color_main-bg
+                    &:before
+                        transform: rotate(35deg)
+                    &:after
+                        transform: rotate(-35deg)
+
+.nsdi-theme
+    .main-header
+        min-height: 450px
+        width: 100%
+        height: auto
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        .content
+            padding-top: 195px
+            padding-bottom: 120px
+
+        h1
+            font-family: "lato"
+            text-transform: uppercase
+            font-size: 80px
+            letter-spacing: 4px
+            color: $color_home-main
+            position: relative
+            span
+                font-size: 20px
+                font-weight: 500
+                color: #fff
+                line-height: 85px
+                transform: translate(0, -50%)
+                letter-spacing: 3.3px
+                &:before
+                    content: ''
+                    left: 0
+                    position: absolute
+                    top: 50%
+                    transform: translate(0, -50%)
+                    width: 50%
+                    height: 2px
+                    background-color: #fff
+            &.title-bg
+                text-align: left
+            &.title-sm
+                text-align: right
+        h2
+            font-family: 'Open Sans'
+            font-size: 16px
+            font-weight: bold
+            letter-spacing: 3px
+            text-align: left
+            text-transform: uppercase
+            color: $color_home-main
+            padding-top: 15px
+
+@media all and (max-width: 991px)
+
+    .nsdi-theme
+        .main-header
+            min-height: 0
+            .content
+                padding: 150px 40px 75px 40px
+
+            h1
+                font-size: 48px
+
+                &.title-sm
+                    text-align: left
+                    padding-bottom: 10px
+                span
+                    line-height: initial
+                    font-size: 16px
+                    &:before
+                        display: none
+            h2
+                font-size: 14px
+                padding-top: 10px
+
+// ----------------------------
+// $nsdi-works
+// ----------------------------
+
+.nsdi-theme.nsdi-works
+    .main-header
+        background-image: url(../images/pages/works/img_project_top.jpg)
+    .main-content
+        margin-bottom: 232px
+.nsdi-works
+
+    .main-btn-pos
+        text-align: center
+    .section-works
+        .work-grid-wrap
+            padding-bottom: 50px
+
+    .filter-box
+        padding: 100px 0px 15px 0px
+
+
+    .main-filter-wrap
+        ul
+            font-size: 0px
+            text-align: left
+            margin-bottom: 15px
+            li
+                display: inline-block
+                cursor: pointer
+                margin-right: 20px
+                margin-bottom: 15px
+
+                a
+                    min-width: 150px
+                    text-align: center
+                    display: block
+                    padding: 10px 40px
+                    font-size: 14px
+                    letter-spacing: 2.5px
+                    color: $color_home-main
+                    border: 1.5px solid $color_home-main
+                    transition: all .5s ease
+
+                &:hover ,&.active
+                    a
+                        color: #1a1a1a
+                        background-color: $color_home-main
+
+            
+
+    .sub-filter-wrap
+        ul
+            text-align: left
+            li
+                display: inline-block
+                margin-right: 12px
+                margin-bottom: 12px
+
+                a
+                    text-align: center
+                    display: block
+                    padding: 5px 15px
+                    font-size: 14px
+                    letter-spacing: 2.5px
+                    color: $color_home-main
+                    border: 1.5px solid $color_home-main
+                    border-radius: 20px
+                    transition: all .5s ease
+
+                &:hover ,&.active
+                    a
+                        color: #1a1a1a
+                        background-color: $color_home-main
+
+
+@media all and (min-width: 991px)
+    .nsdi-works
+        .work-grid-item
+            margin-bottom: 30px
+
+@media all and (max-width: 1199px)
+    .nsdi-works
+        .main-filter-wrap
+            ul 
+                text-align: justify
+                li
+                    width: calc((100% / 3 ) - 14px)
+                    margin-right: 10px
+                    margin-left: 10px
+                    &:nth-child(3n+1)
+                        margin-left: 0px
+                    &:nth-child(3n)
+                        margin-right: 0px
+                    a
+                        min-width: 0px
+                        padding: 10px 0px
+
+
+
+// ----------------------------
+// $nsdi-works-page
+// ----------------------------
+.nsdi-theme.nsdi-works-page
+    .main-header
+        background-image: url(../images/pages/works/img_project-page_top.jpg)
+
+
+.nsdi-works-page
+    .main-body
+        margin-top: 187px
+        margin-bottom: 235px   
+    .figure-section
+        padding-right: calc( 1.9vw - 15px)
+
+        .img-wrap
+            padding-bottom: 50px
+            img
+                +size(100%, auto)
+                user-select: none
+    .intro-section
+        padding-left: calc( 1.9vw - 15px)
+        margin-bottom: 88px
+        .intro-box, .team-box, .tags-box
+            border-bottom: 1px solid $color_home-main
+
+        .intro-box
+            padding-bottom: 36px
+            p
+                font-size: 13px
+                font-weight: 500
+                line-height: 2.0
+                letter-spacing: 1.9px
+                color: #ffffff
+        .team-box
+            padding: 30px 0px 10px 0px
+            ul
+                font-size: 0px
+                li
+                    display: inline-block
+                    vertical-align: top
+                    margin-bottom: 20px
+                    font-size: 0px
+                    width: calc(50% - 1px)
+
+                    .img-box, .info-box
+                        display: inline-block
+                        vertical-align: middle
+                    .img-box
+                        +size(55px, 55px)
+                        img
+                            width: 100%
+                    .info-box
+                        padding-left: 20px
+                    p.position
+                        font-size: 12px
+                        font-weight: 500
+                        line-height: 2.17
+                        letter-spacing: 1.8px
+                        color: #ffffff
+                    p.name
+                        font-size: 15px
+                        font-weight: 500
+                        line-height: 1.73
+                        letter-spacing: 2.2px
+                        color: #ffffff
+        .tags-box
+            margin-bottom: 50px
+            padding: 25px 0px
+
+        .tags
+            ul
+                text-align: left
+                li
+                    display: inline-block
+                    margin-right: 8px
+                    margin-bottom: 11px
+
+                    a
+                        text-align: center
+                        display: block
+                        padding: 5px 18px
+                        font-size: 12px
+                        letter-spacing: 1.8px
+                        color: $color_home-main
+                        border: 1px solid $color_home-main
+                        border-radius: 20px
+                        transition: all .5s ease
+
+                    &:hover ,&.active
+                        a
+                            color: #1a1a1a
+                            background-color: $color_home-main
+
+    .comment-section
+        padding-right: calc( 1.9vw - 15px)
+        
+        .comment-list-wrap
+            padding-top: 35px
+            border-top: 1px solid $color_home-main
+        ul.comment-list
+            li
+                margin-bottom: 40px
+                p
+                    color: darken(desaturate($color_home-main, 12), 7)
+                p.user
+                    font-size: 16px
+                    font-weight: 500
+                    letter-spacing: 2.4px
+                    text-align: left
+                    margin-bottom: 12px
+                    max-width: 450px
+                p.content
+                    color: #fff
+                    font-size: 14px
+                    line-height: 1.71
+                    letter-spacing: 2.1px
+                    margin-bottom: 5px
+                p.date
+                    opacity: 0.5
+                    font-size: 10px
+                    letter-spacing: 1.5px
+        .comment-form
+            margin-top: 15px
+            .main-btn-pos
+                text-align: right
+                clear: both
+                a 
+                    min-width: 178px
+                    text-align: center
+                    span
+                        letter-spacing: 14px
+                        margin-right: -14px
+            .field-list
+                margin-bottom: 20px
+                clear: both
+                .title, .input-blank
+                    display: inline-block
+                    float: left
+                    vertical-align: top
+                    font-size: 0px
+                    
+                    label
+                        font-size: 14px
+                        letter-spacing: 14px
+                        color: darken(desaturate($color_home-main, 12), 7)
+
+                    input, textarea
+                        background-color: transparent
+                        outline: 0
+                        box-shadow: none
+                        border: 0
+                        padding: 7px 14px
+                        display: inline-block
+                        font-size: 14px
+                        transition: all .3s ease-out
+                        &:focus
+                            outline: 0
+                            background-color: rgba($color_home-main, 0.05)
+                    input
+                        width: 312px
+                        max-width: 100%
+                        border-bottom: 1px solid $color_home-main
+
+                    textarea
+                        display: inline-block
+                        width: auto
+                        border: 1px solid $color_home-main
+                        width: 100%
+                        max-width: 100%
+                        min-width: 100%
+                        min-height: 155px
+                        max-height: 500px
+                .title
+                    width: 6%
+                    min-width: 60px
+                    margin-bottom: 10px
+                .input-blank
+                    width: 94%
+                    margin-bottom: 20px
+
+
+@media all and (max-width: 1600px)
+    .nsdi-works-page
+        .comment-section
+            .comment-form
+                .field-list
+                    .input-blank
+                        width: 100%
+
+@media all and (max-width: 1600px) and (min-width: 991px)
+    .nsdi-works-page
+        .intro-section
+            .team-box
+                ul
+                    li
+                        width: 100%
+
+@media all and (max-width: 991px)
+    .index-css.nsdi-works-page
+            .container.outer-wrap 
+                width: 100%
+
+    .nsdi-works-page
+        .main-body
+            margin-top: 100px
+        .main-container
+            padding-left: 60px
+            padding-right: 60px
+            width: 750px
+            margin-right: auto
+            margin-left: auto
+        .figure-section
+            padding-right: 0
+            .img-wrap
+                width: 100vw
+                margin-left: -15px
+        .intro-section
+            padding-left: 0
+        .comment-section
+            padding-right: 0
+            .comment-form
+                .field-list
+                    .title, .input-blank
+                        width: 100%
+                        min-width: 0px
+                .main-btn-pos
+                    text-align: left
+
+@media all and (max-width: 768px)
+    .nsdi-works-page
+        .main-container
+            width: 100%
+
+@media all and (max-width: 500px)
+    .nsdi-works-page
+        .intro-section
+            .team-box
+                ul
+                    li
+                        width: 100%
+
+
+@media all and (max-width: 480px)
+    .nsdi-works-page
+        .main-btn-wrap
+            display: block
+            .main-btn
+                display: block
+                width: 100%
+
+// ----------------------------
+// $nsdi-about
+// ----------------------------
+.nsdi-theme.nsdi-about
+
+    .main-header
+        .content
+            padding-top: 125px
+        h1, h2
+            text-align: right
+        h1.title-bg
+            font-size: 180px
+            letter-spacing: 9px
+            margin-bottom: 20px
+
+        h1.title-sm
+            // margin-top: 250px
+            margin-top: 25vh
+            text-align: left
+            span
+                &:before
+                    left: initial
+                    right: 0
+                    width: 25%
+
+        h2
+            font-size: 25px
+            font-weight: bold
+            letter-spacing: 1.2px
+            line-height: 1.2
+
+    .scroll-hint-wrap 
+        .scroll-hint-btn
+            bottom: 15px
+
+.nsdi-about
+    overflow-x: hidden
+    .main-header
+        height: 1080px
+        max-height: 100vh
+        background-image: url(../images/pages/about/img_about-us_kv.jpg)
+        background-attachment: fixed
+        background-position: center center
+        position: relative
+        .rect-bg-wrap
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            .reveal-content-wrap .reveal-content
+                transition: 0s
+                transition-delay: 0.7s
+            .revealAniL
+                // animation: revealAniL 2s cubic-bezier(0.19, 1, 0.22, 1)
+                animation: revealAniL 1.3s cubic-bezier(0, 0.53, 0.38, 0.86)
+        .rect-bg
+            position: relative
+            vertical-align: top
+            left: 100%
+            transform: translateX(-100%)
+            height: 847px
+            background-color: #353535
+            width: 581px
+            max-width: 50%
+            transform-origin: right center
+            max-height: 80vh
+
+    .scroll-hint-pos
+        position: absolute
+        width: 100%
+        bottom: 0
+        left: calc(100% - 581px)
+        transform: translateX(-50%)
+
+    .section-brand
+        margin-top: 494px
+        position: relative
+        z-index: 10
+        .intro-wrap, .img-wrap
+            position: relative
+        .intro-wrap
+            z-index: 10
+            .title-box
+                position: relative
+                overflow: visible
+                p
+                    text-align: left
+                    span
+                        font-size: 14px
+                        font-weight: 300
+                        line-height: 2.14
+                        letter-spacing: 1.5px
+                        text-align: left
+                    span.has-pr
+                        padding-right: 7px
+                    &:before
+                        content: ''
+                        position: absolute
+                        width: 50px
+                        height: 1px
+                        background-color: #fff
+                        left: -10px
+                        top: 14px
+                        transform: translate(-100% , -50%)
+                h3
+                    margin-top: 24px
+                    margin-bottom: 90px
+                    text-align: left
+                    span
+                        font-size: 36px
+                        font-weight: 500
+                        letter-spacing: 3.9px
+                        white-space: normal
+                        line-height: 1.4
+            .content-box
+                font-size: 0px
+                white-space: nowrap
+                margin-bottom: 33px
+                .title
+                    margin-bottom: 30px
+                .content
+                    width: 80%
+                .title, .content
+                    vertical-align: top
+                    display: inline-block
+                    white-space: normal
+
+                h4
+                    padding: 5px 25px
+                    // background-color: $color_home-main
+                    background-color: #dd9b57
+                    display: inline-block
+                    margin-right: 34px
+                    span
+                        font-size: 12px
+                        font-weight: 500
+                        color: #272727
+                        &:first-child
+                            margin-right: 6px
+                        &:last-child
+                            margin-left: 6px
+                .content
+                    margin-top: -7px
+                    p, span
+                        font-size: 14px
+                        line-height: 2.36
+                        letter-spacing: 1.8px
+                        font-weight: 300
+                    span
+                        display: block
+
+        .img-wrap
+            z-index: 9
+            width: 60vw
+            max-width: 954px
+            min-width: 865px
+            margin-top: -279px
+            img
+                width: 100%
+                height: auto
+        .section-bg
+            width: 1500px
+            height: calc(100% + 170px + 131px)
+            position: absolute
+            right: 0
+            top: -170px
+            background-color: #1a1a1a
+
+    .section-features
+        position: relative
+        margin-bottom: 400px
+        z-index: 9
+        .section-header
+            margin-top: -6%
+            position: relative
+            width: 100%
+            min-height: 600px
+            height: calc(100vw * 1236 / 1920)
+            background-image: url(../images/pages/about/img_about-us_design.jpg)
+            background-repeat: no-repeat
+            background-size: cover
+            background-attachment: fixed
+            background-position: center center
+            .title-wrap
+                position: relative
+                top: 50%
+                transform: translateY(-50%)
+                text-align: center
+                font-size: 0
+
+                h3
+                    display: inline-block
+                    vertical-align: middle
+                    font-size: 38.5px
+                    font-weight: 500
+                    letter-spacing: 4.1px
+                    font-family: 'Noto Sans TC'
+                    span
+                        display: block
+                        text-align: center
+                        font-size: 16px
+                        font-weight: 500
+                        letter-spacing: 2px
+                        margin-top: 15px
+                .icon
+                    +size(42px, 45px)
+                    display: inline-block
+                    position: relative
+                    vertical-align: middle
+                    margin: 0px 59px
+
+                    &:before, &:after
+                        content: ''
+                        position: absolute
+                        width: 90%
+                        height: 4px
+                        background-color: $color_home-main
+                        top: 50%
+                        left: 50%
+                        transform-origin: center
+                    &:before
+                        transform: translate(-50%, -50%) rotate(45deg)
+                    &:after
+                        transform: translate(-50%, -50%) rotate(-45deg)
+        .section-body
+            margin-top: -175px
+            position: relative
+            z-index: 10
+            .grid-wrap
+                .row
+                    margin-right: -7.5px
+                    margin-left: -7.5px
+            .grid-list
+                div[class^='col-']
+                    padding-left: 7.5px
+                    padding-right: 7.5px
+                    text-align: center
+            .grid-item
+                width: 100%
+                max-width: 320px
+                display: inline-block
+                position: relative
+                transition: opacity .5s ease-in
+                &:last-child
+                    margin-right: 0
+                p
+                    white-space: initial
+                .img-box
+                    overflow: hidden
+                    img
+                        width: 100%
+                        height: auto
+                        transition: transform 1.8s ease-in-out
+                .intro-box
+                    background-color: #1a1a1a
+                    padding: 50px 35px
+                    width: 91%
+                    position: absolute
+                    left: 0
+                    bottom: 30px
+                    min-height: 222px
+                    transform: translate(-50px, 100%)
+                    p.title
+                        font-size: 20px
+                        letter-spacing: 2.6px
+                        position: relative
+                        margin-bottom: 10px
+                        &:after
+                            content: ''
+                            position: absolute
+                            right: 0
+                            top: 50%
+                            transform: translate(0, -50%)
+                            width: 30%
+                            height: 1px
+                            background-color: #fff
+                    p.intro
+                        font-size: 14px
+                        line-height: 1.86
+                        letter-spacing: 1.8px
+                &:hover
+                    .img-box
+                        img
+                            transform: scale(1.2) rotate(3deg)
+    .section-vision
+        padding-top: 108px
+        margin-bottom: 285px
+        .grid-wrap
+            position: relative
+
+        .section-bg
+            width: 3000px
+            height: calc(100% + 110px + 130px)
+            position: absolute
+            right: 0
+            top: -110px
+            background-color: #1a1a1a
+        h3
+            display: inline-block
+            position: relative
+            font-size: 30px
+            font-weight: 500
+            letter-spacing: 3.2px
+            margin-bottom: 63px
+            &:after
+                content: ''
+                position: absolute
+                width: 50%
+                height: 1px 
+                background-color: #fff
+                top: 50%
+                right: -50px
+                transform: translate(100%, -50%)
+        p
+            font-size: 14px
+            line-height: 2.36
+            letter-spacing: 1.8px
+            text-align: left
+            margin-bottom: 50px
+
+
+@media all and (min-width: 1600px)
+    .section-features
+        .section-body
+            .grid-list:hover
+                .grid-item
+                    opacity: 0.7
+                .grid-item:hover
+                    opacity: 1
+
+@media all and (max-width: 1600px)
+    .nsdi-theme.nsdi-about
+        .main-header
+            h1.title-bg
+                font-size: 135px
+        .section-features
+            margin-bottom: 195px
+            .section-header
+                margin-top: -105px
+            .section-body
+                margin-top: -105px
+                .grid-item
+                    margin-bottom: 225px
+                    .intro-box
+                        left: 50%
+                        transform: translate(-50%, 100%)
+                        bottom: 70px
+@media all and (max-width: 1199px)
+    .nsdi-about
+        .main-header
+            .rect-bg
+                height: 690px
+        .scroll-hint-pos
+            left: 50%
+        .section-brand
+            margin-top: 279px
+            .img-wrap
+                width: 100vw
+                max-width: 954px
+                min-width: 0px
+                margin-top: 60px
+                transform: translateX(15%)
+
+    .nsdi-theme.nsdi-about
+        .main-header
+            h1.title-bg
+                font-size: 90px
+                letter-spacing: 4.5px
+            h2
+                font-size: 16px
+
+@media all and (max-width: 991px)
+    .nsdi-about
+        .main-container
+            padding-left: 60px
+            padding-right: 60px
+            // width: 750px
+            margin-right: auto
+            margin-left: auto
+        .main-header
+            .rect-bg
+                height: 495px
+                max-height: initial
+        .section-brand
+            .intro-wrap
+                .title-box
+                    h3
+                        margin-bottom: 60px
+                        margin-top: 15px
+                    p
+                        &:before
+                            width: 35px
+                .content-box
+                    .title, .content
+                        display: block
+                        width: 100%
+
+        .section-vision
+            .section-bg
+                right: -15px
+            .grid-item
+                margin-bottom: 100px
+                .no-mb
+                    margin-bottom: 0px
+
+    .nsdi-theme.nsdi-about
+        .main-header
+            h1.title-bg
+                margin-bottom: 10px
+            h1.title-sm
+                margin-top: 120px
+                text-align: right  
+                span
+                    position: relative
+                    &:before
+                        display: block
+                        left: -15px
+                        transform: translateX(-100%)
+                        width: 100px
+
+@media all and (max-width: 768px)
+    .nsdi-about
+        .main-header
+            background-attachment: scroll
+        .section-brand
+            .section-bg
+                right: -15px
+                height: calc(100% + 110px + 104px)
+                top: -110px
+        .section-brand
+            .intro-wrap
+                .content-box
+                    .content
+                        padding-right: 30px
+                        p
+                            letter-spacing: 1.5px
+                            span
+                                display: initial
+
+    
+        .section-features
+            .section-header
+                margin-top: -45px
+                background-attachment: scroll
+                .title-wrap
+                    h3
+                        display: block
+                        font-size: 32px
+                        span
+                            font-size: 14px
+                    .icon
+                        display: block
+                        margin: 17px auto 15px
+            .section-body
+                margin-top: -45px
+                .grid-item, .grid-item:last-child
+                    margin-right: auto
+                    margin-left: auto
+                    display: block
+
+@media all and (max-width: 480px)
+    .nsdi-about
+        .section-brand
+            .img-wrap
+                transform: translateX(0)
+                width: 100vw
+        .section-vision
+            h3
+                &:after
+                    right: -25px
+                    width: 30%
+
+
+// ----------------------------
+// $nsdi-contact
+// ----------------------------
+
+.nsdi-theme.nsdi-contact
+    .input-clear
+        +size(15px, 15px)
+        position: relative
+        margin-right: 10px
+        top: 50%!important
+        transform: translateY(-50%)!important
+        &:before, &:after
+            content: ''
+            +poaCenter
+            width: 100%
+            height: 1px
+            background-color: $color_home-main
+        &:before
+            transform: translate(-50%, -50%) rotate(45deg)
+        &:after
+            transform: translate(-50%, -50%) rotate(-45deg)
+        &:hover
+            opacity: 0.8
+    .main-header
+        background-image: url(../images/pages/contact/img_contact_kv.jpg)
+    .main-body
+        min-height: 1000px
+    .section-info
+        margin-top: 160px
+        position: relative
+        z-index: 1
+        .info-box
+            margin-bottom: 35px
+            h3
+                padding: 15px 0px 30px 0px
+                font-size: 22px
+                font-weight: 500
+                letter-spacing: 2.4px
+                color: $color_home-main
+
+            span, a, p
+                font-size: 15px
+                letter-spacing: 2px
+                text-align: left
+                color: #fff
+                padding: 2px 0px
+                transition: all .3s ease
+                vertical-align: top
+                line-height: 1.71
+            li
+                font-size: 0px
+                white-space: nowrap
+
+                span
+                    white-space: normal
+                    display: inline-block
+                    vertical-align: top
+
+                span.title
+                    width: 25%
+                    max-width: 120px
+                span.content
+                    width: 75%
+        .main-btn-wrap
+            margin-top: 15px
+            button.main-btn a span
+                text-transform: uppercase
+
+        .map-wrap
+            position: absolute
+            width: 60%
+            height: 100%
+            left: 0
+            top: 0
+            .map
+                position: absolute
+                right: 0
+                top: 0
+                width: 100%
+                height: 100%
+                iframe
+                    width: 100%
+                    height: 100%
+                    border: 0
+    .section-inquiry-form
+        margin-top: 182px
+        .main-bg
+            position: absolute
+            width: 3000px
+            height: calc(100% + 202px + 99px)
+            left: 0
+            top: -202px
+            background-color: #1a1a1a
+            z-index: 0
+        .form-header
+            position: absolute
+            left: 0
+            top: 0
+            height: 100%
+            width: 30%
+            padding-left: 125px
+            h3, h3 span
+                display: inline-block
+                font-size: 36px
+                font-weight: 500
+                letter-spacing: 3.9px
+                text-align: left
+                color: #ffffff
+                line-height: 1.25
+                span.en, span.en span
+                    display: block
+                    font-size: 26px
+                    letter-spacing: 3px
+                    text-align: left
+                    color: $color_home-main
+                    padding-bottom: 12px
+                span.en span
+                    display: inline-block
+            p.note
+                position: absolute
+                width: 100%
+                bottom: 63px
+                left: 0
+                padding-left: 125px
+                font-size: 14px
+                // line-height: 2.36
+                letter-spacing: 1.8px
+                text-align: justify
+                color: #ffffff
+        .verify-wrap
+            .verify-box
+                width: 80%
+                margin-left: 20%
+
+        .field-wrap
+            font-size: 0px
+            white-space: nowrap
+            margin-bottom: 15px
+            .label-wrap, .input-wrap , .select-wrap, .textarea-wrap
+                display: inline-block
+                font-size: 15px
+                white-space: normal
+                vertical-align: top
+                font-weight: 300
+                letter-spacing: 3.2px
+                text-align: left
+                color: $color_home-main
+            .label-wrap
+                width: 20%
+                text-align: right
+            .input-wrap , .select-wrap
+                width: 80%
+            .textarea-wrap
+                width: calc(90% + 3px)
+            .label-wrap.lg
+                width: calc(10% - 3px)
+            .select-wrap
+                position: relative
+                &:after, &:before
+                    content: ''
+                    position: absolute
+                    z-index: 0
+                &:after
+                    width: 50px
+                    height: 100%
+                    border-left: 1px solid rgba($color_home-main, 0.7)
+                    right: 0
+                    top: 0
+                &:before
+                    width: 10px 
+                    height: 10px
+                    border-right: 1px solid $color_home-main
+                    border-bottom: 1px solid $color_home-main
+                    transform: rotate(45deg) translate(-50%, -50%)
+                    transform-origin: center
+                    right: 20px
+                    top: 50%
+                select
+                    position: relative
+                    z-index: 1
+
+            label
+                padding: 10px 15px 10px 0px
+            input, select, textarea
+                outline: 0
+                appearance: none
+                background-color: transparent
+                transition: all .3s ease
+                box-shadow: initial
+                border: 1px solid rgba($color_home-main, 0.7)
+                width: 100%
+                border-radius: 0px
+                padding: 10px
+                font-weight: 500
+                &:focus
+                    background-color: rgba($color_home-main, 0.1)
+            input
+                padding-right: 60px
+            textarea
+                min-height: 200px
+                max-height: 300px
+                min-width: 100%
+                max-width: 100%
+            select
+                padding-right: 60px
+
+        .sub-btn-pos
+            text-align: right
+        .sub-btn-wrap
+            +sub-btn($w: 100%, $pTB: 12px, $color: $color_home-main, $fz: 15px, $pRL: 38px)
+            @media (min-width: 991px)
+                +sub-btn-hover
+        .form-footer-wrap
+            position: relative
+            text-align: right
+        .form-footer
+            width: 350px
+            position: relative
+            display: inline-block
+        p.greeting
+            margin-top: 15px
+            font-size: 15px
+            font-weight: 400
+            letter-spacing: 3.2px
+            color: $color_home-main
+
+    .section-contact
+        margin-top: 195px
+        margin-bottom: 100px
+        .block-2
+            .title
+                font-size: 15px
+                letter-spacing: 3.2px
+                text-align: left
+                color: #ffffff
+            .content
+                margin-bottom: 15px
+
+                &.no-mb
+                    margin-bottom: 0px
+                a
+                    font-size: 15px
+                    letter-spacing: 3.2px
+                    text-align: left
+                    color: $color_home-main
+                    word-break: break-all
+                p
+                    font-size: 14px
+                    line-height: 1.71
+                    letter-spacing: 1.8px
+                    text-align: left
+                    color: #ffffff
+
+
+        .contact-link-wrap
+            position: relative
+            transition: all .5s ease-out
+            padding: 15px
+            border: 1px solid transparent
+            .icon-wrap
+                width: 100px
+                height: 100px
+                margin: 0 auto
+                margin-bottom: 30px
+                img
+                    width: 100%
+                    height: auto
+        
+            .info-wrap
+                text-align: center
+                h4
+                    font-size: 22px
+                    font-weight: 500
+                    letter-spacing: 2.4px
+                    margin-bottom: 12px
+                    color: $color_home-main
+                p, p span
+                    font-size: 14px
+                    line-height: 2.36
+                    letter-spacing: 1.8px
+                    color: #ffffff
+
+                .qrcode-wrap ,.info
+                    display: inline-block
+                    vertical-align: top
+                .info
+                    text-align: left
+                    width: calc(100% - 90px)
+                    padding-left: 25px
+                    white-space: normal
+                .qrcode-wrap
+                    width: 90px
+                    height: 90px
+
+                    img
+                        width: 100%
+                        height: auto  
+
+            &.is-line
+                .info-wrap
+                    white-space: nowrap
+                    font-size: 0px
+
+            a
+                position: absolute
+                width: 100%
+                height: 100%
+                left: 0
+                top: 0
+
+@media all and (min-width: 1600px)
+    .nsdi-theme.nsdi-contact
+        .section-contact
+            .block-1
+                .row
+                    margin-left: 15px
+                    margin-right: -30px
+                div[class^=col-]
+                    padding-left: 0px
+
+@media all and (min-width: 1199px)
+    .nsdi-theme.nsdi-contact
+        .section-contact
+            .contact-link-wrap
+                &:hover
+                    background-color: rgba($color_home-main, 0.05)
+                    border: 1px solid $color_home-main
+
+@media all and (min-width: 991px)
+    .nsdi-theme.nsdi-contact
+        .section-contact
+            .contact-link-wrap, a
+                &:hover
+                    opacity: 0.8
+        .section-info
+            .info-box
+                a:hover
+                    opacity: 0.8    
+
+@media all and (max-width: 1600px)
+    .nsdi-theme.nsdi-contact
+        .section-inquiry-form
+            .field-wrap
+                .label-wrap
+                    width: 25%
+                .input-wrap , .select-wrap
+                    width: 75%
+                .textarea-wrap
+                    width: calc(87.5% + 3px)
+                .label-wrap.lg
+                    width: calc(12.5% - 3px)
+                label
+                    padding-right: 10px
+            .verify-wrap
+                .verify-box
+                    width: 75%
+                    margin-left: 25%
+            .form-footer
+                width: 100%
+
+        .section-contact
+            .contact-link-wrap
+                margin-bottom: 30px
+            .block-2
+                margin-top: 60px
+                .title
+                    // text-align: right
+                    text-align: center
+                .content
+                    // padding-left: 45px
+                    padding-left: 0px
+                    margin-bottom: 30px
+                    text-align: center
+                    a, p
+                        text-align: center
+
+@media all and (max-width: 1199px)
+    .nsdi-theme.nsdi-contact
+        .section-info
+            margin-top: 80px
+            .map-wrap
+                position: relative
+                width: 100%
+                height: 350px
+                margin-top: 50px
+        .section-inquiry-form
+            padding: 100px 0px
+            background-color: #1a1a1a
+            // margin-top: 90px
+            margin-top: 0px
+            padding-top: 120px
+            .form-header
+                position: relative
+                width: 100%
+                height: auto
+                margin-bottom: 45px
+                padding-left: 0px
+                h3
+                    margin-bottom: 25px
+                p.note
+                    position: relative
+                    width: 100%
+                    bottom: initial
+                    left: initial
+                    padding-left: 0px
+            .field-wrap
+                .label-wrap
+                    text-align: left
+        .section-contact
+            margin-top: 90px
+            .block-1
+                margin-bottom: 35px
+            .contact-link-wrap-col
+                text-align: center
+
+            .contact-link-wrap
+                &.is-line
+                    display: inline-block
+                .info-wrap
+                    .info
+                        width: calc(100% - 90px)         
+
+
+@media all and (max-width: 991px)
+    .nsdi-theme.nsdi-contact
+        .section-inquiry-form
+            .field-wrap
+                .label-wrap
+                    width: calc(12.5% - 3px)
+                .input-wrap , .select-wrap
+                    width: calc(87.5% + 3px)
+            .verify-wrap
+                .verify-box
+                    width: calc(87.5% + 3px)
+                    margin-left: calc(12.5% - 3px)
+                    padding-bottom: 15px
+                    text-align: right
+                    .g-recaptcha
+                        display: inline-block
+            .form-footer
+                width: 350px
+                max-width: 100%
+
+
+
+
+@media all and (max-width: 768px)
+    .nsdi-theme.nsdi-contact
+        .main-container
+            padding-left: 60px
+            padding-right: 60px
+
+        .section-inquiry-form
+            .field-wrap
+                white-space: normal
+                .label-wrap, .input-wrap , .select-wrap, .label-wrap.lg, .textarea-wrap
+                    display: block
+                    width: 100%
+            .verify-wrap
+                .verify-box
+                    width: 100%
+                    margin-left: 0px
+                    text-align: left
+
+            .form-footer-wrap
+                text-align: left
+
+        .section-contact
+            .contact-link-wrap
+                &.is-line
+                    display: block
+                .info-wrap
+                    .info
+                        width: 100%
+                        padding-left: 0px
+                        text-align: center
+
+@media all and (max-width: 480px)
+    .nsdi-theme.nsdi-contact
+        .section-info
+            .info-box
+                p
+                    margin-bottom: 10px
+                li
+                    margin-bottom: 10px
+                    &:last-child
+                        margin-bottom: 0px
+                    span
+                        display: block
+                    span.title
+                        width: 100%
+                    span.content
+                        width: 100%
+        .section-inquiry-form
+            .field-wrap
+                .label-wrap, .input-wrap , .select-wrap, .textarea-wrap
+                    font-size: 14px
+            .form-header
+                h3, h3 span
+                    font-size: 32px
+                    letter-spacing: 3.2px
+                    span.en, span.en span
+                        font-size: 18px
+                        letter-spacing: 2.5px
+                        padding-bottom: 8px
+                p.note
+                    font-size: 14px
+                    letter-spacing: 1px
+            p.greeting
+                font-size: 14px
+                letter-spacing: 1px
+            .verify-wrap
+                .verify-box
+                    padding-bottom: 0px
+
+            .g-recaptcha
+                transform: scale(0.8)
+                transform-origin: left top
+
+
+// ----------------------------
+// $nsdi-team
+// ----------------------------
+.nsdi-theme.nsdi-team
+    .revealAniR
+        animation: revealAniR 1.5s cubic-bezier(0.19, 1, 0.22, 1)
+    .revealAniL
+        animation: revealAniL 1.5s cubic-bezier(0.19, 1, 0.22, 1)
+    .revealAniT
+        animation: revealAniT 1.5s cubic-bezier(0.19, 1, 0.22, 1)
+    .revealAniB
+        animation: revealAniB 1.5s cubic-bezier(0.19, 1, 0.22, 1)
+    .reveal-content-wrap
+        height: 100%
+        position: absolute
+        left: 0
+        top: 0
+    .reveal
+        background-color: $color_home-main
+
+    .main-header
+        background-image: url(../images/pages/team/img_team_kv.jpg)
+    .main-body
+        min-height: 1000px
+    .main-section
+        position: relative
+        .img-wrap
+            position: absolute
+            // width: 50%
+            width: 100%
+            height: 100%
+            left: 0
+            top: 0
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: right center
+        .reveal-content-wrap
+            width: 50%
+        .job-item
+            h4.title
+                font-size: 22px
+                font-weight: 500
+                letter-spacing: 2.4px
+                text-align: left
+                color: $color_home-main
+                padding-bottom: 15px
+                line-height: 1.5
+            ul.intro-list
+                padding-left: 20px
+                margin-bottom: 62.5px
+                li
+                    list-style-type: decimal
+                    font-size: 14px
+                    line-height: 2.36
+                    letter-spacing: 1.8px
+                    padding: 2px 47px 2px 5px
+                    text-align: left
+                    span
+                        font-size: 14px
+                        line-height: 2.36
+                        letter-spacing: 1.8px
+                        text-align: left
+
+    .section-welcome
+        margin-top: 160px
+        margin-bottom: 303px
+        .img-wrap
+            background-image: url(../images/pages/team/img_team_01.jpg)
+        .section-bg
+            background-color: #1a1a1a
+            width: 100%
+            height: calc(100% + 482px)
+            position: absolute
+            left: 0
+            top: 145px
+        .title
+            margin-top: 85px
+            h3, h3 span
+                font-size: 30px
+                font-weight: 500
+                letter-spacing: 3.2px
+                text-align: left
+                line-height: 1.45
+                span.en
+                    display: block
+                span.en, span.en span
+                    font-family: OpenSans
+                    font-size: 26px
+                    letter-spacing: 3px
+                    text-align: left
+                    color: $color_home-main
+            h3
+                padding-bottom: 35px
+                margin-bottom: 9px
+                position: relative
+                &:after
+                    content: ''
+                    position: absolute
+                    width: 50px
+                    height: 1px 
+                    background-color: #fff
+                    left: 0
+                    bottom: 0
+        .content
+            padding-top: 30px
+            padding-bottom: 30px
+            p, a
+                margin-bottom: 30px
+                font-size: 14px
+                line-height: 2.36
+                letter-spacing: 1.8px
+                text-align: left
+                transition: all .2s ease
+    
+        .main-btn-wrap
+            margin-top: 15px
+            button.main-btn a span
+                text-transform: uppercase
+
+
+    .section-job-1
+        margin-bottom: calc( 151px - 62.5px )
+        .reveal-content-wrap
+            left: initial
+            right: 0
+            width: 43%
+            max-height: 488px
+        &.main-section
+            .img-wrap
+                left: initial
+                right: 0
+                // width: 43%
+                width: 100%
+        .img-wrap
+            background-image: url(../images/pages/team/img_team_02)
+            // max-height: 488px
+            height: 100%
+            background-position: left center  
+
+        .section-bg
+            background-color: #2c2c2c
+            width: 3000px
+            height: calc(100% + 145px + 460px - 62.5px)
+            position: absolute
+            left: initial
+            right: 12.5%
+            top: -145px
+
+    .section-job-2
+        margin-bottom: calc(86px + 111px - 62.5px)
+        .reveal-content-wrap
+            width: 54.2%
+            height: 63%
+            left: -15px
+            top: -52px
+        &.main-section
+            .img-wrap
+                // width: 54.2%
+                // height: 63%
+                width: 100%
+                height: 100%
+            .job-item
+                ul.intro-list
+                    li
+                        padding-right: 10px
+        .job-list-wrap
+            padding-top: 79px
+        .img-wrap
+            background-image: url(../images/pages/team/img_team_03)
+            background-position: left center
+            // left: -15px
+            // top: -52px
+        .section-bg
+            background-color: #1a1a1a
+            width: calc(100% / 12 * 10)
+            height: calc(100% + 111px - 62.5px)
+            position: absolute
+            left: initial
+            right: 0px
+            top: 0px
+
+
+@media all and (min-width: 991px)
+    .nsdi-theme.nsdi-team
+        .section-welcome
+            .content
+                a:hover
+                    opacity: 0.8
+@media all and (max-width: 1600px)
+    .nsdi-theme.nsdi-team
+        .main-section
+            .job-item
+                h4.title
+                    font-size: 18px
+                ul.intro-list
+                    li
+                        padding-right: 25px
+        .section-job-2
+            .section-bg
+                width: 3000px
+                left: -55px
+                right: initial
+        
+@media all and (max-width: 1199px)
+    .nsdi-theme.nsdi-team
+        .main-section
+            .reveal-content-wrap
+                position: relative
+                width: 100%
+                height: 480px
+                margin-top: 50px 
+            .img-wrap
+                // position: relative
+                // width: 100%
+                // height: 480px
+                // margin-top: 50px 
+            .job-item
+                ul.intro-list
+                    li
+                        padding-right: 0px
+        .section-welcome
+            margin-top: 80px
+            margin-bottom: 265px
+            .section-bg
+                height: 100%
+                left: initial
+                right: -35px
+                width: 3000px
+
+        .section-job-1
+            margin-bottom: calc( 182px - 62.5px)
+            .reveal-content-wrap
+                position: relative
+                width: 100%
+                height: 480px
+                margin-top: 50px 
+            &.main-section
+                .img-wrap
+                    // position: relative
+                    // width: 100%
+                    // height: 480px
+                    // margin-top: 50px
+            .section-bg
+                right: -35px
+
+        .section-job-2
+            .reveal-content-wrap
+                left: 0px
+                top: 0  
+            &.main-section
+                .img-wrap
+                    // position: relative
+                    // width: 100%
+                    // height: 480px
+                    // // margin-top: 50px
+                    // left: 0px
+                    // top: 0
+
+@media all and (max-width: 768px)
+    .nsdi-theme.nsdi-team
+        .main-container
+            padding-left: 60px
+            padding-right: 60px
+        .section-welcome
+            margin-bottom: 200px
+        .section-job-1
+            margin-bottom: 200px
+            .reaveal-content-wrap
+                margin-top: -12.5px
+            &.main-section
+                .img-wrap
+                    // margin-top: -12.5px
+        .section-job-2
+            margin-bottom: 200px
+            .reaveal-content-wrap
+                margin-top: -12.5px
+            .job-list-wrap
+                padding-top: 0px
+            &.main-section
+                .img-wrap
+                    // margin-top: -12.5px
+
+@media all and (max-width: 480px)
+    .nsdi-theme.nsdi-team
+        .section-welcome
+            .title
+                h3, h3 span
+                    font-size: 24px
+                    span.en, span.en span
+                        font-size: 18px
+        .main-section
+            .img-wrap
+                height: 320px
+        .section-job-1
+            &.main-section
+                .img-wrap
+                    height: 320px
+        .section-job-2
+
+            &.main-section
+                .img-wrap
+                    height: 320px
+
+// ----------------------------
+// $nsdi-webdesign-共用
+// ----------------------------
+.nsdi-theme.nsdi-web-feature, .nsdi-theme.nsdi-web-function, .nsdi-theme.nsdi-web-spec
+    .main-header
+        background-image: url(../images/pages/webdesign/img_web-design_top.jpg)
+// ----------------------------
+// $nsdi-webdesign-feature
+// ----------------------------
+.nsdi-theme.nsdi-web-feature
+    overflow-x: hidden
+    .main-body
+        padding-top: 70px
+        padding-bottom: 197px
+    // .rellax-wrap
+    //     position: relative
+    //     .section-intro
+    //         z-index: 1
+    //     .section-img
+    //         z-index: 0
+    .section-intro
+        position: relative
+        padding: 90px 85px
+        z-index: 1
+        overflow: hidden
+        .title
+            margin-bottom: 35px
+            h3, h3 span
+                font-size: 30px
+                line-height: 1.6
+                letter-spacing: 4.3px
+                text-align: left
+                color: #ffffff
+        .content
+            p
+                font-size: 14px
+                line-height: 1.93
+                letter-spacing: 1.8px
+                text-align: left
+                color: #ffffff
+        .this-bg
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            background-color: #353535
+            z-index: -1
+            left: 0
+            top: 0
+
+    .section-img
+        position: relative
+        z-index: 0
+        .img-wrap
+            background-size: cover
+            background-position: center center
+            background-repeat: no-repeat
+
+
+    // section01
+    .section-01
+        // margin-bottom: 234px
+        margin-bottom: 12.5%
+        .section-bg
+            background-color: #1a1a1a
+            width: 3000px
+            height: 154%
+            position: absolute
+            right: 16.6666667%
+            top: 90px
+        .section-img
+            margin-top: -196.5px
+            .img-wrap
+                width: 100%
+                padding-top: calc(100% / 1356 * 600 )
+                background-image: url(../images/pages/webdesign/img_web-design_discuss.jpg)
+
+    .section-02
+        // margin-bottom: 183px
+        margin-bottom: 9.68%
+        .section-intro
+            padding: 0
+            transform: translateY(-100%)
+        .section-img
+            width: 56.14%
+            .img-wrap
+                width: 100%
+                padding-top: calc(100% / 1078 * 590)
+                background-image: url(../images/pages/webdesign/img_web-design_size.jpg)
+
+    .section-03
+        // margin-bottom: 182px
+        margin-bottom: 9.58%
+        .section-intro
+            padding: 0
+            margin-bottom: 80px
+        .grid-list
+            font-size: 0px
+            white-space: nowrap
+            margin-left: -64px
+            margin-right: -64px
+        .grid-item-wrap
+            display: inline-block
+            vertical-align: top
+            width: calc(100% / 4)
+        .grid-item
+            text-align: center
+            p
+                letter-spacing: 2px
+                color: #ffffff
+                line-height: 1.2
+            .icon-wrap
+                text-align: center
+                display: inline-block
+                +size(150px, 150px)
+                margin-bottom: 30px
+                img
+                    +size(100%, auto)
+    .section-04
+        // margin-bottom: 234px
+        margin-bottom: 12.5%
+        .section-bg
+            background-color: #1a1a1a
+            width: 3000px
+            height: 72%
+            position: absolute
+            right: 25%
+            top: 292px
+        .block-01
+            .section-img
+                margin-top: -196.5px
+                position: relative
+                left: 8.333333%
+                .img-wrap
+                    width: 100%
+                    padding-top: calc(100% / 610 * 900 )
+                    background-image: url(../images/pages/webdesign/img_web-design_image.jpg)  
+        .block-02
+            margin-top: 393px
+            position: relative
+            left: 8.33333%
+            .section-img
+                margin-top: -243px
+                position: relative
+                left: 8.333333%
+                .img-wrap
+                    width: 100%
+                    padding-top: calc(100% / 610 * 800 )
+                    background-image: url(../images/pages/webdesign/img_web-design_marcom.jpg)
+
+    .section-05
+        // margin-bottom: 184px
+        margin-bottom: 9.69%
+        .section-intro
+            // margin-top: -300px
+            margin-top: -63.7%
+            left: 5%
+            position: relative
+            .this-bg
+                background-color: #1a1a1a
+        .section-img
+            width: 70.63%
+            .img-wrap
+                width: 100%
+                padding-top: calc(100% / 1356 * 600)
+                background-image: url(../images/pages/webdesign/img_web-design_text.jpg)
+
+    .section-06
+        .section-intro
+            margin-top: -265px
+            // margin-top: -56.3%
+            padding-left: 0px
+            overflow: visible
+            padding-top: 106px
+            padding-bottom: 106px
+            .this-bg
+                background-color: #1a1a1a
+                width: 950px
+                right: 0
+                left: initial
+        .section-img
+            width: 69.06%
+            position: relative
+            left: 30.94%
+            .img-wrap
+                width: 100%
+                padding-top: calc(100% / 1326 * 606 )
+                background-image: url(../images/pages/webdesign/img_web-design_photo.jpg)
+
+@media all and (max-width: 1600px)
+    .nsdi-theme.nsdi-web-feature
+        .section-02
+            margin-bottom: 200px
+            .section-intro
+                margin-top: -50%
+                padding: 90px 85px
+                transform: translateY(0)
+        .section-03
+            margin-top: 0px
+        .section-04
+            .section-bg
+                display: none
+            .section-intro
+                .this-bg
+                    background-color: #1a1a1a
+            .block-01
+
+                .section-img
+                    margin-top: 196.5px
+                    left: 0
+                    margin-bottom: 200px
+            .block-02
+                left: 0
+                .section-img
+                    margin-top: 196.5px
+                    left: 0
+
+@media all and (max-width: 1199px)
+    .nsdi-theme.nsdi-web-feature
+        .section-01
+            margin-bottom: 200px
+        .section-02
+            margin-top: 200px
+            margin-bottom: 200px
+            .section-intro
+                margin-top: -200px
+                padding: 90px 85px
+        .section-03
+            margin-bottom: 200px
+            .grid-list
+                margin-left: 0px
+                margin-right: 0px
+        .section-04
+            margin-bottom: 200px
+        .section-05
+            margin-bottom: 200px
+            .section-img
+                width: 83%
+            .section-intro
+                left: 0
+                margin-top: -25%
+        .section-06
+            .section-intro
+                margin-top: -25%
+
+@media all and (max-width: 991px)
+    .nsdi-theme.nsdi-web-feature
+        .section-intro
+            padding: 45px 42px
+            .content p
+                display: inline
+            .title
+                h3, h3 span
+                    font-size: 24px
+        .section-01
+            margin-bottom: 200px
+            .section-img
+                margin-top: -15%
+        .section-02
+            margin-top: 0px
+            margin-bottom: 200px
+            .section-img
+                width: 80%
+            .section-intro
+                padding: 45px 42px
+                margin-top: -5%
+                left: 5%
+                transform: translateY(0)
+        .section-03
+            .section-intro
+                .title h3
+                    text-align: center
+                .content p
+                    text-align: center
+                    display: inline-block
+            .grid-list
+                margin-left: 0px
+                margin-right: 0px
+            .grid-item
+                p
+                    font-size: 14px
+                .icon-wrap
+                    +size(75px, 75px)
+
+        .section-04
+            .block-01
+                .section-img
+                    margin-top: -25%
+            .block-02
+                .section-img
+                    margin-top: -25%
+        .section-05
+            .section-intro
+                margin-top: -10%
+        .section-06
+            .section-intro
+                padding: 45px
+                margin-top: -10%
+
+@media all and (max-width: 768px)
+    .nsdi-theme.nsdi-web-feature
+        .section-intro
+            .title
+                h3, h3 span
+                    font-size: 20px
+        .section-01
+            .section-bg
+                display: none
+            .section-img
+                width: calc(100% + 30px)
+                margin-left: -15px
+                position: relative
+                top: -30px
+            .section-intro
+                margin-left: -15px
+                .this-bg
+                    background-color: #1a1a1a
+
+        .section-02
+            .section-img
+                width: 100%
+            .section-intro
+                .this-bg
+                    background-color: #1a1a1a
+        .section-05
+            .section-img
+                width: 100%
+            .section-intro
+                overflow: visible
+                .this-bg
+                    width: 950px
+        .section-06
+            .section-img
+                width: 100%
+                left: 0
+@media all and (max-width: 480px)
+    .nsdi-theme.nsdi-web-feature
+        .section-03
+            .grid-list
+                white-space: normal
+            .grid-item-wrap
+                width: 49.9%
+                margin-bottom: 35px
+// ----------------------------
+// $nsdi-webdesign-function
+// ----------------------------
+.nsdi-theme.nsdi-web-function
+    overflow-x: hidden
+    .section-intro
+        margin-bottom: 65px
+        .title, .content
+            text-align: center
+        .title
+            padding-bottom: 30px
+            margin-bottom: 50px
+            position: relative
+            &:after
+                content: ''
+                position: absolute
+                +size(50px, 2px)
+                background-color: #fff
+                left: 50%
+                bottom: 0
+                transform: translate(-50%, 0)
+        h3, h3 span
+            font-size: 30px
+            line-height: 1.5
+            letter-spacing: 4.3px
+            color: #ffffff
+        p
+            font-size: 14px
+            line-height: 1.93
+            letter-spacing: 1.8px
+            color: #ffffff
+            span.wrap-in-lg
+                display: block
+    .grid-list-wrap
+        margin-left: auto
+        margin-right: auto
+        max-width: 650px
+
+    .grid-list
+        font-size: 0px
+        text-align: center
+        
+    .grid-item-wrap
+        display: inline-block
+        margin: 25px
+
+    .grid-item
+        .icon-wrap
+            img
+                width: 100%
+                height: auto
+
+
+
+
+    .section-01
+        padding-top: 178px
+        padding-bottom: calc( 200px - 18px )
+        background-image: url(../images/pages/webdesign/img_web-design_bg_01.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        background-attachment: fixed
+        background-position: center center
+        .grid-item
+            .icon-wrap
+                width: 96px
+        .grid-list-wrap
+            max-width: 600px
+
+    .section-02
+        padding-top: 186px
+        padding-bottom: calc( 192px - 18px )
+        .grid-item
+            .icon-wrap
+                height: 57px
+                img
+                    width: auto
+                    height: 100%
+    .section-03
+        padding-top: 184px
+        padding-bottom: calc( 208px - 18px )
+        background-image: url(../images/pages/webdesign/img_web-design_bg_02.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        background-attachment: fixed
+        background-position: center center
+        .section-intro
+            margin-bottom: 135px
+    .section-04
+        padding-top: 151px
+        padding-bottom: calc( 248px - 18px )
+
+    .section-03, .section-04
+        .grid-list-wrap
+            max-width: 950px
+        .grid-item
+            .icon-wrap
+                width: 170px
+    .section-05
+        margin-top: -70px
+
+        .section-intro
+            margin-top: 140px
+            position: relative
+            .title, .content
+                text-align: left
+            .title
+                padding-bottom: 0px
+                margin-bottom: 35px
+                &:after
+                    display: none
+            .this-bg
+                position: absolute
+                background-color: #1a1a1a
+                width: 2000px
+                height: calc( 100% + 200px )
+                top: -100px
+                right: -200px
+        .section-img
+            margin-left: 4.166666%
+            img
+                width: 100%
+                height: auto
+
+@media all and (max-width: 1600px)
+    .nsdi-theme.nsdi-web-function
+        .section-05
+            .section-intro
+                .this-bg
+                    right: 20%
+@media all and (max-width: 991px)
+    .nsdi-theme.nsdi-web-function
+        .main-container
+            padding-left: 45px
+            padding-right: 45px
+
+        .grid-list
+            margin-left: -15px
+            margin-right: -15px
+        .section-03, .section-04
+            .grid-list
+                padding-left: 30px
+                padding-right: 30px
+        .section-05
+            margin-top: 0px
+            .section-intro
+                margin-top: 0px
+            .section-img
+                margin-left: 0px
+
+@media all and (max-width: 768px)
+    .nsdi-theme.nsdi-web-function
+        .section-intro
+            p
+                span.wrap-in-lg
+                    display: inline
+        .section-01
+            padding-top: 120px
+            padding-bottom: 120px
+            .grid-list
+                padding-left: 110px
+                padding-right: 110px
+            
+        .section-03, .section-04
+            .grid-list
+                padding-left: 25px
+                padding-right: 25px
+            .grid-item
+                .icon-wrap
+                    width: 150px
+
+        .section-intro
+            h3, h3 span
+                font-size: 24px
+                letter-spacing: 3.5px
+            p
+                font-size: 14px
+                line-height: 1.93
+                letter-spacing: 1.8px
+        .section-05
+            .section-intro
+                .this-bg
+                    height: calc(100% + 100px)
+                    top: -50px
+                    right: -25px
+            .section-img
+                margin-left: -50px
+                margin-top: -50px
+                transform: translateX(25px)
+        .section-01, .section-03
+            background-attachment: initial
+@media all and (max-width: 628px)
+    .nsdi-theme.nsdi-web-function
+        .section-01
+            .grid-list
+                padding-left: 70px
+                padding-right: 70px
+            .grid-item-wrap
+                margin: 15px
+            .grid-item
+                .icon-wrap
+                    // width: 80px
+
+@media all and (max-width: 565px)
+    .nsdi-theme.nsdi-web-function
+        .section-01
+            .grid-list
+                padding-left: 30px
+                padding-right: 30px
+        .section-03, .section-04
+            .grid-list
+                padding-left: 0px
+                padding-right: 0px
+            .grid-item-wrap
+                margin: 15px
+            .grid-item
+                .icon-wrap
+                    width: 140px
+
+@media all and (max-width: 480px)
+    .nsdi-theme.nsdi-web-function
+        .section-01
+            .grid-list
+                padding-left: 0px
+                padding-right: 0px
+        .section-02
+            .grid-item
+                .icon-wrap
+                    height: 50px
+        .section-03, .section-04
+            .grid-item
+                .icon-wrap
+                    width: 110px
+// ----------------------------
+// $nsdi-webdesign-spec
+// ----------------------------
+.nsdi-theme.nsdi-web-spec
+    overflow-x: hidden
+
+    .main-table-wrap
+        overflow-x: auto
+        padding-top: 45px
+        width: 100%
+    .main-table
+        width: 100%
+        tr
+            border-bottom: 1px solid rgba(#fff, 0.2)
+            th, td
+                font-size: 16px
+                line-height: 2.0
+                letter-spacing: 1px
+                text-align: center
+                color: #ffffff
+                vertical-align: top
+                padding: 10px 0px
+                font-family: 'Noto Sans TC'
+            th:first-child
+                text-align: left
+        thead
+            tr
+                border-bottom: 1px solid rgba(#fff, 0.5)
+        tbody
+            tr:last-child
+                border-bottom: 0px
+    .section-intro
+        position: relative
+        .title
+            margin-bottom: 38px
+            h3
+                font-size: 30px
+                line-height: 1.6
+                letter-spacing: 4.3px
+                text-align: left
+                color: #ffffff
+                span
+                    font-size: 14px
+                    line-height: 1.93
+                    letter-spacing: 1.8px
+                    text-align: left
+                    color: #ffffff
+                    margin-left: 65px
+                
+        .content
+            p
+                font-size: 14px
+                line-height: 1.93
+                letter-spacing: 1.8px
+                text-align: left
+                color: #ffffff
+    .section-01
+        padding-top: 145px
+        padding-bottom: calc( 151px + 81px)
+        .main-table
+            min-width: 580px
+    .section-02
+        .section-intro
+            position: relative
+            padding: 153px 0px 163px 0
+            z-index: 2
+            .title, .main-table-wrap
+                position: relative
+                z-index: 2
+            .this-bg
+                background-color: #1a1a1a
+                width: 1500px
+                position: absolute
+                right: -111px
+                height: 100%
+                top: 0
+                z-index: 1
+
+        .section-img
+            margin-top: -81px
+            z-index: 0
+            .img-wrap
+                width: 100%
+                img
+                    width: 100%
+                    height: auto
+
+    .section-03
+        margin-top: -430px
+        padding-top: 542px
+        padding-bottom: calc(171px - 45px)
+        background-image: url(../images/pages/webdesign/img_web-design_bg_03.jpg)
+        background-size: cover
+        background-position: center center
+        background-repeat: no-repeat
+        background-attachment: fixed
+        .section-intro
+            margin-bottom: 45px
+            ul
+                padding-left: 25px
+                li
+                    padding-left: 5px
+                    list-style-type: decimal
+                    font-size: 14px
+                    line-height: 1.93
+                    letter-spacing: 1.8px
+                    text-align: left
+                    color: #ffffff
+            .title
+                h3
+                    color: $color_home-main
+
+@media all and (max-width: 1600px)
+    .nsdi-theme.nsdi-web-spec
+        .section-01
+            padding-bottom: 151px
+        .section-02
+            .section-img
+                margin-top: 0px
+            .section-intro
+                margin-top: -400px
+                margin-top: -53.5%
+@media all and (max-width: 991px)
+    .nsdi-theme.nsdi-web-spec
+        .main-container
+            padding-left: 45px
+            padding-right: 45px
+
+@media all and (max-width: 768px)
+    .nsdi-theme.nsdi-web-spec
+        .main-table-wrap
+            padding-top: 0px
+        .main-table
+            tr
+                th, td
+                    font-size: 14px
+        .section-intro
+            .title
+                h3
+                    font-size: 24px
+                    letter-spacing: 3.5px
+                    span
+                        margin-left: 0px
+                        display: block
+                        margin-top: 10px
+        .section-02
+            .section-img
+                margin-left: -15px
+                margin-right: -15px
+        .section-03
+            background-attachment: initial
+            .section-intro
+                p
+                    text-indent: -80px
+                    margin-left: 80px
+
+// ----------------------------
+// $retina background img setting
+// ----------------------------
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) 
+    #fullpage
+        .section-top
+            background-image: url(../images/homepage_top/img_home-top_14@2x.png)
+    .nsdi-theme.nsdi-works
+        .main-header
+            background-image: url(../images/pages/works/img_project_top@2x.jpg)
+    .nsdi-theme.nsdi-works-page
+        .main-header
+            background-image: url(../images/pages/works/img_project-page_top@2x.jpg)
+
+    .nsdi-about
+        .main-header
+            background-image: url(../images/pages/about/img_about-us_kv@2x.jpg)
+        .section-header
+            background-image: url(../images/pages/about/img_about-us_design@2x.jpg)
+
+    .nsdi-theme.nsdi-contact
+        .main-header
+            background-image: url(../images/pages/contact/img_contact_kv@2x.jpg)
+    .nsdi-theme.nsdi-team
+        .main-header
+            background-image: url(../images/pages/team/img_team_kv@2x.jpg)
+        .section-welcome
+            .img-wrap
+                background-image: url(../images/pages/team/img_team_01@2x.jpg)
+        .section-job-1
+            .img-wrap
+                background-image: url(../images/pages/team/img_team_02@2x.jpg)
+        .section-job-2
+            .img-wrap
+                background-image: url(../images/pages/team/img_team_03@2x.jpg)
+
+    .nsdi-theme.nsdi-web-feature, .nsdi-theme.nsdi-web-function, .nsdi-theme.nsdi-web-spec
+        .main-header
+            background-image: url(../images/pages/webdesign/img_web-design_top@2x.jpg)
+
+    .nsdi-theme.nsdi-web-feature
+        .section-01
+            .section-img
+                .img-wrap
+                    background-image: url(../images/pages/webdesign/img_web-design_discuss@2x.jpg)
+
+        .section-02
+            .section-img
+                .img-wrap
+                    background-image: url(../images/pages/webdesign/img_web-design_size@2x.jpg)
+
+        .section-04
+            .block-01
+                .section-img
+                    .img-wrap
+                        background-image: url(../images/pages/webdesign/img_web-design_image@2x.jpg)  
+            .block-02
+                .section-img
+                    .img-wrap
+                        background-image: url(../images/pages/webdesign/img_web-design_marcom@2x.jpg)
+
+        .section-05
+            .section-img
+                .img-wrap
+                    background-image: url(../images/pages/webdesign/img_web-design_text@2x.jpg)
+
+        .section-06
+            .section-img
+                .img-wrap
+                    background-image: url(../images/pages/webdesign/img_web-design_photo@2x.jpg)
+
+
+
+// ----------------------------
+// $scroll reveal animate css
+// ----------------------------
+.reveal-content-wrap
+    width: 100%
+    position: relative
+    overflow: hidden
+    .reveal-content
+        width: 100%
+        opacity: 0
+        transition: opacity 1s .5s
+        img
+            width: 100%
+    .reveal-content.active
+        opacity: 1
+
+.reveal
+    position: absolute
+  
+.reveal.reveal-l
+    width: 0
+    height: 100%
+    top: 0
+    left: 0
+.reveal.reveal-r
+    width: 0
+    height: 100%
+    top: 0
+    right: 0
+
+.reveal.reveal-t
+    width: 100%
+    height: 0
+    left: 0
+    top: 0
+.reveal.reveal-b
+    width: 100%
+    height: 0
+    left: 0
+    bottom: 0
+  
+.reveal.gray
+    background-color: #353535
+
+.revealAniR
+    animation: revealAniR 1s cubic-bezier(0.19, 1, 0.22, 1)
+.revealAniL
+    animation: revealAniL 1s cubic-bezier(0.19, 1, 0.22, 1)
+.revealAniT
+    animation: revealAniT 1s cubic-bezier(0.19, 1, 0.22, 1)
+.revealAniB
+    animation: revealAniB 1s cubic-bezier(0.19, 1, 0.22, 1)
+  
+  
+@keyframes revealAniL
+    0%
+        width: 0
+        left: 0
+    50%
+        width: 100%
+        left: 0%
+    100%
+        width: 0
+        left: 100%
+  
+@keyframes revealAniR
+    0%
+        width: 0
+        right: 0
+    50%
+        width: 100%
+        right: 0%
+    100%
+        width: 0
+        right: 100%
+  
+@keyframes revealAniT
+    0%
+        height: 0
+        top: 0
+    50%
+        height: 100%
+        top: 0%
+    100%
+        height: 0
+        top: 100%
+
+@keyframes revealAniB
+    0%
+        height: 0
+        bottom: 0
+    50%
+        height: 100%
+        bottom: 0%
+    100%
+        height: 0
+        bottom: 100%
